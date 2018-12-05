@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.WelcomeController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: darkcyan;">
+         <top>
+            <VBox alignment="TOP_CENTER" prefHeight="254.0" prefWidth="580.0">
+               <children>
+                  <Label text="Welcome to Easy Schedules!" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="0.8173076923076923">
+                           <stops>
+                              <Stop color="#40d049" />
+                              <Stop color="#26c8dd" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="101.0" prefWidth="705.0" text="Please login in to your account" translateY="100.0" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#00e5ff" />
+                              <Stop color="#00e5ff" offset="0.007434944237918215" />
+                              <Stop color="#40d049" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill></Label>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#employeePressed" prefHeight="100.0" prefWidth="150.0" text="Employee" textFill="#05c605">
+                     <font>
+                        <Font name="Chalkboard Bold" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.5" color="#00ccff" height="50.0" radius="24.5" width="50.0" />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#managerPressed" prefHeight="100.0" prefWidth="150.0" text="Manager" textFill="#04b0db">
+                     <font>
+                        <Font name="Chalkboard Bold" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow blurType="GAUSSIAN" choke="0.5" color="#00ff3c" height="50.0" radius="24.5" width="50.0" />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

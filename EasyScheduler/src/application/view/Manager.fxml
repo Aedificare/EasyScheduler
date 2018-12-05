@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ManagerController">
+   <children>
+      <TextArea fx:id="shiftReportArea" layoutX="150.0" layoutY="300.0" prefHeight="350.0" prefWidth="700.0" />
+      <BorderPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: darkcyan;">
+         <top>
+            <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="500.0" spacing="100.0" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Button minWidth="70.0" mnemonicParsing="false" onAction="#save" text="Save" />
+                  <Label fx:id="titleLabel" alignment="CENTER" prefHeight="17.0" prefWidth="400.0" text="Welcome YourNameHere" textFill="#e40000">
+                     <font>
+                        <Font name="SansSerif Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button minWidth="70.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="58.0" text="Logout" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </top>
+         <bottom>
+            <GridPane fx:id="weekView" alignment="CENTER" prefHeight="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="28.0" text="SUN" GridPane.halignment="CENTER" />
+                  <Label alignment="CENTER" text="MON" GridPane.columnIndex="1" />
+                  <Label text="TUE" GridPane.columnIndex="2" />
+                  <Label text="WED" GridPane.columnIndex="3" />
+                  <Label text="THU" GridPane.columnIndex="4" />
+                  <Label alignment="CENTER" text="FRI" GridPane.columnIndex="5" />
+                  <Label text="SAT" GridPane.columnIndex="6" />
+                  <TextArea fx:id="sunAmText" onMouseClicked="#tileClicked" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1" />
+                  <TextArea fx:id="sunPmText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="2" />
+                  <TextArea fx:id="monAmText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextArea fx:id="monPmText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints fillHeight="false" maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="30.0" right="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="180.0" prefWidth="700.0">
+               <children>
+                  <Label text="Select one of the following:" />
+                  <HBox fx:id="radioButtons" alignment="TOP_CENTER" prefHeight="22.0" prefWidth="500.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <RadioButton mnemonicParsing="false" onAction="#employeeRosterSelected" text="Employee roster">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="viewGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="singleEmployeeRadioButton" mnemonicParsing="false" onAction="#singleEmployeeSelected" text="Single Employee" toggleGroup="$viewGroup" />
+                        <RadioButton mnemonicParsing="false" onAction="#reportsSelected" text="Shift Report" toggleGroup="$viewGroup" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="menuContainer" alignment="TOP_CENTER" prefHeight="73.0" prefWidth="700.0" spacing="20.0">
+                     <children>
+                        <MenuButton fx:id="rosterMenuButton" mnemonicParsing="false" text="View schedule for:" translateX="50.0" visible="false">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#displayFullSchedule" text="View all" />
+                              <Menu fx:id="jobTitleMenu" mnemonicParsing="false" text="Show only:">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="BARTENDER" />
+                                    <MenuItem mnemonicParsing="false" text="EXPO" />
+                                    <MenuItem mnemonicParsing="false" text="HOST" />
+                                  <MenuItem mnemonicParsing="false" text="SERVER" />
+                                    <MenuItem mnemonicParsing="false" text="SERVER ASSISTANT" />
+                                </items>
+                              </Menu>
+                            <MenuItem mnemonicParsing="false" onAction="#displayAvailableShifts" text="Show available shifts" />
+                          </items>
+                        </MenuButton>
+                        <MenuButton fx:id="singleEmployeeMenu" mnemonicParsing="false" text="Select an Employee" visible="false" />
+                        <MenuButton fx:id="employeeViewButton" mnemonicParsing="false" text="Select a view" visible="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#displayEmployeeWorkWeek" text="Display my work week" />
+                              <MenuItem mnemonicParsing="false" onAction="#displayEmployeeAvailability" text="Display my availability" />
+                           </items>
+                        </MenuButton>
+                        <ToggleButton fx:id="removeShiftMode" mnemonicParsing="false" onAction="#removeShiftMode" text="Remove Shifts" visible="false" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="helpLabel" prefHeight="17.0" prefWidth="1019.0" wrapText="true" />
+                  <Label fx:id="warningLabel" prefHeight="17.0" prefWidth="1043.0" />
+                  <Label fx:id="currentDisplayLabel" prefHeight="24.0" prefWidth="993.0">
+                     <font>
+                        <Font name="Charter Roman" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <VBox prefHeight="0.0" prefWidth="50.0" spacing="100.0">
+               <children>
+                  <Label nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="49.0" rotate="-90.0" text="AM" textFill="RED" translateY="250.0" BorderPane.alignment="BOTTOM_LEFT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="49.0" rotate="-90.0" text="PM" textFill="RED" translateY="400.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

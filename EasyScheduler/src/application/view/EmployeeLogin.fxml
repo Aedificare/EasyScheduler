@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EmployeeLoginController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: seagreen;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="289.0" prefWidth="447.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="144.0" prefWidth="388.0" text="Enter your username and password, the hit enter." wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="100.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Times Roman" size="24.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#a61500" />
+                              <Stop color="#0017a1" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill></Label>
+                  <TextField fx:id="usernameField" prefHeight="27.0" prefWidth="542.0" promptText="Username" />
+                  <PasswordField fx:id="passwordField" promptText="password" />
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox alignment="TOP_CENTER" prefHeight="59.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="59.0" prefWidth="448.0" text="Login to Employee Account" textFill="#8a0303">
+                     <font>
+                        <Font name="Times New Roman" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handle" prefHeight="46.0" prefWidth="93.0" text="Login" translateY="-80.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Apple SD Gothic Neo Regular" size="24.0" />
+               </font>
+            </Button>
+         </bottom>
+      </BorderPane>
+      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#previousScreen" style="-fx-background-color: darkgoldenrod;" text="Back">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
